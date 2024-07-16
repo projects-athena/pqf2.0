@@ -1,7 +1,7 @@
 // cardNovoCurso.tsx
 import React from 'react';
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
-import { Course } from '@/app/types/types';  // Adjust the import path as needed
+import { Box, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Course } from '@/app/types/types';
 
 const CardNovoCurso: React.FC<Course> = ({ title, subtitle, image }) => {
     return (
