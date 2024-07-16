@@ -38,7 +38,7 @@ export default function RootLayout({
           <Container component="main" sx={{ mt: 2, mb: 2 }}>
             {children}
           </Container>
-          <Footer />
+          <Footer/>
           </GlobalBodyStyles>
         </ThemeProvider>
       </body>
