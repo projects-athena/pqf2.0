@@ -1,5 +1,7 @@
-// app/page.tsx
+'use client'
+
 import * as React from 'react';
+import { FormHelperText } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,6 +14,18 @@ import Box from '@mui/material/Box';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { validationSchema } from '../utils/validationSchema';
+
+interface IFormInput {
+  nome: string;
+  sobreNome: string;
+  email: string;
+  senha: string;
+  confirmacaoSenha: string;
+  acceptedTerms: boolean;
+}
 
 function Copyright(props: any) 
 {
@@ -27,8 +41,16 @@ function Copyright(props: any)
   );
 }
 
-export default function Login() 
+const FormCadastro: React.FC = () => 
 {
+  const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>({
+    resolver: yupResolver(validationSchema)
+  });
+
+  const onSubmit: SubmitHandler<IFormInput> = data => {
+    console.log(data);
+  };
+
   return (
     <>
       <Container component="main" maxWidth="xs" sx={{bgcolor: 'secondary.main', color: 'secondary.contrastText',  borderRadius: 2, marginTop: -7, marginBottom: 10}}>
@@ -47,17 +69,19 @@ export default function Login()
           <Typography component="h1" variant="h5">
             Registre-se!
           </Typography>
-          <Box component="form" noValidate onSubmit={console.log("aaa")} sx={{ mt: 3 }}>
+          <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="nome"
                   required
                   fullWidth
                   id="nome"
                   label="Nome"
                   autoFocus
+                  {...register('nome')}
+                  error={!!errors.nome}
+                  helperText={errors.nome?.message}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -66,8 +90,10 @@ export default function Login()
                   fullWidth
                   id="sobrenome"
                   label="Sobrenome"
-                  name="sobrenome"
                   autoComplete="family-name"
+                  {...register('sobreNome')}
+                  error={!!errors.sobreNome}
+                  helperText={errors.sobreNome?.message}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -76,44 +102,57 @@ export default function Login()
                   fullWidth
                   id="email"
                   label="Endereço de Email"
-                  name="email"
                   autoComplete="email"
+                  {...register('email')}
+                  error={!!errors.email}
+                  helperText={errors.email?.message}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  name="password"
                   label="Senha"
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  {...register('senha')}
+                  error={!!errors.senha}
+                  helperText={errors.senha?.message}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  name="confirmationpassword"
                   label="Confirme sua senha"
                   type="password"
                   id="confirmationpassword"
                   autoComplete="new-password"
+                  {...register('confirmacaoSenha')}
+                  error={!!errors.confirmacaoSenha}
+                  helperText={errors.confirmacaoSenha?.message}
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" sx={{ color: '#f50057','&.Mui-checked': {color: '#f50057',},}}/>}
+                  control={
+                    <Checkbox 
+                      {...register('acceptedTerms')} 
+                      sx={{ color: '#f50057','&.Mui-checked': {color: '#f50057',},}}
+                    />
+                  }
                   label="Estou de acordo com os termos e condições previstos em lei, aplicam-se T&C"
                 />
+                {errors.acceptedTerms && (
+                  <FormHelperText error>{errors.acceptedTerms.message}</FormHelperText>
+                )}
               </Grid>
             </Grid>
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              color="tertiary" 
               sx={{ mt: 3, mb: 2 }}
             >
               Entrar
@@ -132,3 +171,5 @@ export default function Login()
     </>
   );
 }
+
+export default FormCadastro;
