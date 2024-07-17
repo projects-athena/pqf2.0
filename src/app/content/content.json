@@ -1,0 +1,51 @@
+{
+    "pageTitle": "",
+    "header": {
+        "title": ""
+    },
+    "novosCursos": {
+        "maintitle": "Novos Cursos Disponíveis",
+        "courses": [
+          {
+            "title": "Empreendedorismo",
+            "subtitle": "Negócios",
+            "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/267c15a1-ece9-4d29-853e-985882d32497/d1k9gez-a478485a-b8e1-4797-8555-9eeb7414c5e1.png/v1/fill/w_256,h_256,q_80,strp/my_icons___bulbasaur_by_lovuhemant_d1k9gez-fullview.jpg"
+          },
+          {
+            "title": "ANOTHER-API",
+            "subtitle": "ANOTHER-API",
+            "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/267c15a1-ece9-4d29-853e-985882d32497/d1k9gez-a478485a-b8e1-4797-8555-9eeb7414c5e1.png/v1/fill/w_256,h_256,q_80,strp/my_icons___bulbasaur_by_lovuhemant_d1k9gez-fullview.jpg"
+          },
+          {
+            "title": "ANOTHER-API",
+            "subtitle": "ANOTHER-API",
+            "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/267c15a1-ece9-4d29-853e-985882d32497/d1k9gez-a478485a-b8e1-4797-8555-9eeb7414c5e1.png/v1/fill/w_256,h_256,q_80,strp/my_icons___bulbasaur_by_lovuhemant_d1k9gez-fullview.jpg"
+          },
+          {
+            "title": "ANOTHER-API",
+            "subtitle": "ANOTHER-API",
+            "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/267c15a1-ece9-4d29-853e-985882d32497/d1k9gez-a478485a-b8e1-4797-8555-9eeb7414c5e1.png/v1/fill/w_256,h_256,q_80,strp/my_icons___bulbasaur_by_lovuhemant_d1k9gez-fullview.jpg"
+          },{
+            "title": "ANOTHER-API",
+            "subtitle": "ANOTHER-API",
+            "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/267c15a1-ece9-4d29-853e-985882d32497/d1k9gez-a478485a-b8e1-4797-8555-9eeb7414c5e1.png/v1/fill/w_256,h_256,q_80,strp/my_icons___bulbasaur_by_lovuhemant_d1k9gez-fullview.jpg"
+          },
+          {
+            "title": "ANOTHER-API",
+            "subtitle": "ANOTHER-API",
+            "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/267c15a1-ece9-4d29-853e-985882d32497/d1k9gez-a478485a-b8e1-4797-8555-9eeb7414c5e1.png/v1/fill/w_256,h_256,q_80,strp/my_icons___bulbasaur_by_lovuhemant_d1k9gez-fullview.jpg"
+          },
+          {
+            "title": "ANOTHER-API",
+            "subtitle": "ANOTHER-API",
+            "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/267c15a1-ece9-4d29-853e-985882d32497/d1k9gez-a478485a-b8e1-4797-8555-9eeb7414c5e1.png/v1/fill/w_256,h_256,q_80,strp/my_icons___bulbasaur_by_lovuhemant_d1k9gez-fullview.jpg"
+          }
+          ,
+          {
+            "title": "ANOTHER-API",
+            "subtitle": "ANOTHER-API",
+            "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/267c15a1-ece9-4d29-853e-985882d32497/d1k9gez-a478485a-b8e1-4797-8555-9eeb7414c5e1.png/v1/fill/w_256,h_256,q_80,strp/my_icons___bulbasaur_by_lovuhemant_d1k9gez-fullview.jpg"
+          }
+        ]
+      }
+}
