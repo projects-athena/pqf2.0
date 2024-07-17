@@ -29,3 +29,12 @@ export const validationSchema = Yup.object().shape({
     .oneOf([true], 'Você deve aceitar os termos e condições')
     .required('Você deve aceitar os termos e condições')
 });
+
+export const loginValidationSchema = Yup.object().shape({
+  email: Yup.string()
+    .required('Preencha seu Email.')
+    .email('Email inválido'),
+  senha: Yup.string()
+    .required('Preencha sua senha.')
+    .min(8, 'Senha deve ter pelo menos 8 caracteres'),
+});
