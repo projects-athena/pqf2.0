@@ -5,8 +5,8 @@ import { ReactNode, useEffect } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './styles/theme/theme';
-import Header from './components/header';
-import Footer from './components/footer';
+import Header from './components/Header/header';
+import Footer from './components/Footer/footer';
 import { Container, Box } from '@mui/material';
 import { styled } from '@mui/system';
 
