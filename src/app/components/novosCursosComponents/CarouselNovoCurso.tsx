@@ -6,15 +6,17 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import CardNovoCurso from './cardNovoCurso';
 import { Course } from '@/app/types/types';
+import './carousel.css';
 
 interface CarouselNovoCursoProps {
     courses: Course[];
+    itemsPerPage?: number;
 }
 
-const CarouselNovoCurso: React.FC<CarouselNovoCursoProps> = ({ courses }) => {
+const CarouselNovoCurso: React.FC<CarouselNovoCursoProps> = ({ courses, itemsPerPage = 3 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isSliding, setIsSliding] = useState(false);
 
-    const itemsPerPage = 3;
     const totalPages = Math.ceil(courses.length / itemsPerPage);
 
     const handlePrevClick = () => {
@@ -24,6 +26,7 @@ const CarouselNovoCurso: React.FC<CarouselNovoCursoProps> = ({ courses }) => {
     const handleNextClick = () => {
         setCurrentIndex((prevIndex) => (prevIndex === totalPages - 1 ? 0 : prevIndex + 1));
     };
+
 
     const getCurrentItems = () => {
         const startIndex = currentIndex * itemsPerPage;
@@ -36,13 +39,13 @@ const CarouselNovoCurso: React.FC<CarouselNovoCursoProps> = ({ courses }) => {
                 <IconButton onClick={handlePrevClick}>
                     <ArrowBackIosIcon sx={{ color: 'white' }} />
                 </IconButton>
-                <Grid container spacing={2} justifyContent="center">
+                <Grid container spacing={2} justifyContent="center" className={isSliding ? 'slide-out' : 'slide-in'}>
                     {getCurrentItems().map((course, index) => (
-                        <Grid item key={index}>
-                            <CardNovoCurso 
-                                title={course.title} 
-                                subtitle={course.subtitle} 
-                                image={course.image} 
+                        <Grid item key={index} style={{ transition: 'transform 0.5s ease-in-out' }}>
+                            <CardNovoCurso
+                                title={course.title}
+                                subtitle={course.subtitle}
+                                image={course.image}
                             />
                         </Grid>
                     ))}
