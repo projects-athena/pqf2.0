@@ -76,5 +76,25 @@
             "image": "/images/bg/Analise-de-mercado.png"
           }
         ]
+      },
+      "cursosMaisComprados": {
+        "maintitle": "Cursos Mais Comprados",
+        "courses": [
+          {
+            "image":"/images/bg/formacao-social-media.jpg"
+          },
+          {
+            "image":"/images/bg/formacao-social-media.jpg"
+          },{
+            "image":"/images/bg/formacao-social-media.jpg"
+          },
+          {
+            "image":"/images/bg/formacao-social-media.jpg"
+          },
+          {
+            "image":"/images/bg/formacao-social-media.jpg"
+          }
+
+        ]
       }
 }

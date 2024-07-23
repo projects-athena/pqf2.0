@@ -9,7 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const Footer = () => {
   return (
-    <Box 
+    <Box
       component="footer" 
       sx={{
         position: 'fixed',
@@ -18,7 +18,6 @@ const Footer = () => {
         backgroundColor: 'secondary.main',
         color: 'secondary.contrastText',
         boxShadow: '0px -4px 4px rgba(0, 0, 0, 0.1)',
-        zIndex: 1000,
         py: 1  // Adicionando padding vertical
       }}
     >
