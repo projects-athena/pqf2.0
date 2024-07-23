@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
-import Link from "next/link";
+import Link from '@mui/material/Link';
 import Image from "next/image";
 
 const Header = () => {
@@ -28,7 +28,7 @@ const Header = () => {
             </Link>
           </Typography>
         </Box>
-        <Button variant='contained' color='tertiary'>Entre</Button>
+        <Button href={"/Cadastro"} variant='contained' color='tertiary'>Entre</Button>
       </Toolbar>
     </AppBar>
   );
