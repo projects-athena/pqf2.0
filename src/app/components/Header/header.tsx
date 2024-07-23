@@ -2,8 +2,15 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import Link from "next/link";
 import Image from "next/image";
+import { useLayout } from '../../context/LayoutContext';
 
 const Header = () => {
+  const { showHeader } = useLayout();
+
+  if (!showHeader) {
+    return null;
+  }
+
   return (
     <AppBar position="static">
       <Toolbar sx={{

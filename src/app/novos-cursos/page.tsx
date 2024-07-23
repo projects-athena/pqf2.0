@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import content from '../content/content.json';
-import Carousel from '../components/novosCursosComponents/Carousel';
+import Carousel from '../components/novosCursosComponents/carousel';
 import CardNovoCurso from '../components/novosCursosComponents/cardsNovosCursosDisponiveis';
 import CardCursosMaisComprados from '../components/novosCursosComponents/cardsCursosMaisComprados';
 
