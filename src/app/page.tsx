@@ -6,17 +6,17 @@ import { Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import CursoDestaque from './components/CursoDestaque/cursoDestaque';
+import CursoIndicacao from './components/CursoIndicacao/cursoIndicacao';
 import content from './content/content.json';
 
-//import './components/CarroselDestaque/style.css';
-//import EmblaCarousel from './components/CarroselDestaque/EmblaCarousel'
-//import { EmblaOptionsType } from 'embla-carousel';
 
-/*const OPTIONS: EmblaOptionsType = { loop: true }
-const SLIDE_COUNT = 5
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())*/
+const { cursosDestaqueTitle, courses } = content.cursosDestaque;
 
-const { maintitle, courses } = content.cursosDestaque;
+const cursos = [
+  <CursoDestaque key={1} image='' title="Curso 1" subtitle="Descrição do Curso 1" />,
+  <CursoDestaque key={2} image='' title="Curso 2" subtitle="Descrição do Curso 2" />,
+  <CursoDestaque key={3} image='' title="Curso 3" subtitle="Descrição do Curso 3" />
+];
 
 export default function Home() {
   return (
@@ -57,13 +57,30 @@ export default function Home() {
           </Typography>
       </Box>
 
-      <Grid container spacing={2} sx={{ justifyContent: 'center' ,  marginBottom: 10}}>
+      <Grid 
+        container 
+        spacing={2}
+        sx={{justifyContent: 'center', marginBottom: 3}}
+      >
         {courses.map((course) => (
-          <Grid item key={course.title} sx={{ textAlign: 'center' }}>
+          <Grid 
+            item 
+            key={course.title} 
+            xs={6}
+            md={3}
+            sx={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+            }}
+          >
             <CursoDestaque image={course.image} title={course.title} subtitle={course.subtitle} />
           </Grid>
         ))}
       </Grid>
+      
+      <Box sx={{marginBottom: 10}}>
+        <CursoIndicacao></CursoIndicacao>
+      </Box>
 
     </Container>
   );

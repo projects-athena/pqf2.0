@@ -104,7 +104,7 @@ const FormLogin: React.FC = () => {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href={"/Cadastro"} variant="body2">
                   {"Não possuo uma conta"}
                 </Link>
               </Grid>

@@ -50,7 +50,7 @@ const Footer = () => {
           <Grid item xs={2.4}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <Button color="primary" fullWidth>
+                <Button href={"/novos-cursos"} color="primary" fullWidth>
                   <ImportContactsIcon sx={{ color: 'white' }} />
                 </Button>
               </Grid>

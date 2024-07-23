@@ -3,6 +3,28 @@
     "header": {
         "title": ""
     },
+    "categoriasCurso": {
+      "categoriasTitle": "Ache o seu curso ideal!",
+      "categorias": [{
+        "nomeCategoria": "Marketing"
+      },
+      {
+         "nomeCategoria": "Dança"
+      },
+      {
+         "nomeCategoria": "Gatronomia"
+      },
+      {
+         "nomeCategoria": "Tecnologia"
+      },
+      {
+         "nomeCategoria": "Saúde"
+      },
+      {
+         "nomeCategoria": "Mecânica"
+      }
+    ]
+    },
     "novosCursos": {
         "maintitle": "Novos Cursos Disponíveis",
         "courses": [
@@ -49,7 +71,7 @@
         ]
       },
     "cursosDestaque": {
-        "maintitle": "Cursos em Destaque",
+        "cursosDestaqueTitle": "Cursos em Destaque",
         "courses": [
           {
             "title": "Empreendedorismo",
