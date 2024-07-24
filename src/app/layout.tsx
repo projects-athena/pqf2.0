@@ -1,4 +1,3 @@
-// app/layout.tsx
 'use client';
 
 import { ReactNode, useEffect } from 'react';
@@ -9,7 +8,7 @@ import Header from './components/Header/header';
 import Footer from './components/Footer/footer';
 import { Container, Box } from '@mui/material';
 import { styled } from '@mui/system';
-
+import { usePathname } from 'next/navigation';
 
 const GlobalBodyStyles = styled('body')({
   backgroundColor: '#161616'
@@ -20,6 +19,8 @@ export default function RootLayout({
 }: {
   children: ReactNode;
 }) {
+  const pathname = usePathname();
+
   useEffect(() => {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -28,17 +29,19 @@ export default function RootLayout({
     }
   }, []);
 
+  const showHeader = pathname !== '/player';
+
   return (
     <html lang="pt-br">
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <GlobalBodyStyles>
-          <Header />
-          <Container component="main" sx={{ mt: 2, mb: 2 }}>
-            {children}
-          </Container>
-          <Footer/>
+            {showHeader && <Header />}
+            <Container component="main" sx={{ mt: 2, mb: 2 }}>
+              {children}
+            </Container>
+            <Footer />
           </GlobalBodyStyles>
         </ThemeProvider>
       </body>
