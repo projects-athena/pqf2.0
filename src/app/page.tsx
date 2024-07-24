@@ -2,21 +2,22 @@
 'use client'
 
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Button, Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import CursoDestaque from './components/CursoDestaque/cursoDestaque';
 import CursoIndicacao from './components/CursoIndicacao/cursoIndicacao';
+import CarroselHome from './components/CarroselHome/carroselHome';
 import content from './content/content.json';
+import { EmblaOptionsType } from 'embla-carousel';
+import './components/CarroselHome/carroselHome.css';
+
+const OPTIONS: EmblaOptionsType = { loop: true }
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 
 const { cursosDestaqueTitle, courses } = content.cursosDestaque;
-
-const cursos = [
-  <CursoDestaque key={1} image='' title="Curso 1" subtitle="Descrição do Curso 1" />,
-  <CursoDestaque key={2} image='' title="Curso 2" subtitle="Descrição do Curso 2" />,
-  <CursoDestaque key={3} image='' title="Curso 3" subtitle="Descrição do Curso 3" />
-];
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
             py: 1,
             left: 0,
             margin: 0,
-            marginBottom: '35px'
+            marginBottom: 3
           }}
         >
           <Typography
@@ -57,6 +58,8 @@ export default function Home() {
           </Typography>
       </Box>
 
+      <Button sx={{justifyContent: 'center', marginBottom: 3, width: '100%', color: 'secondary.contrastText', borderRadius: 5}} variant='contained' color='tertiary'>Matricule-se Já!</Button>
+
       <Grid 
         container 
         spacing={2}
@@ -78,9 +81,14 @@ export default function Home() {
         ))}
       </Grid>
       
-      <Box sx={{marginBottom: 10}}>
+      <Box sx={{marginBottom: 2}}>
         <CursoIndicacao></CursoIndicacao>
       </Box>
+
+      <Box sx={{marginBottom: 10}}>
+        <CarroselHome slides={courses} options={OPTIONS}></CarroselHome>
+      </Box>
+      
 
     </Container>
   );
