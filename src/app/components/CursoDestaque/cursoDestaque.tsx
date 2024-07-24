@@ -12,7 +12,6 @@ const CursoDestaque: React.FC<CursoDestaqueProps> = ({ image, title, subtitle })
     <Card
       sx={{
         width: '100%',
-        maxWidth: 280,
         borderRadius: '8px',
         boxShadow: 3,
         overflow: 'hidden',
