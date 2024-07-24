@@ -27,20 +27,20 @@ export default function NovosCursos() {
           </Carousel>
         </Box>
       </Box>
-      <Box> {/* 2 wrapper*/}
-        <Grid sx={{marginLeft:'-50px'}} container spacing={2} justifyContent="center">
-          <Grid item>
+      <Box sx={{maxWidth: '100%'}}> {/* 2 wrapper*/}
+        <Grid container spacing={2} sx={{marginLeft: '5px'}}>
+          <Grid xs={8}>
             <Typography sx={{ marginTop: '30px' }} variant='h5' color='white'>
               <strong>{content.cursosMaisComprados.maintitle}</strong>
             </Typography>
           </Grid>
-          <Grid item>
-            <Button sx={{ color: '#fff', marginTop:'30px', textDecoration:'none' }}>
-              <Typography variant='subtitle2' sx={{textDecoration:'none'}}>Veja Mais</Typography>
+          <Grid xs={4}>
+            <Button sx={{ color: '#fff', marginTop: '30px', textDecoration: 'none'}}>
+              <Typography variant='subtitle2' sx={{ textDecoration: 'none' }}>Veja Mais</Typography>
             </Button>
           </Grid>
         </Grid>
-        <Box sx={{marginBottom:'100px'}}>
+        <Box sx={{ marginBottom: '100px' }}>
           <Carousel itemsPerPage={2} direction="row">
             {cursosMaisComprados.courses.map((courses, index) => (
               <CardCursosMaisComprados
