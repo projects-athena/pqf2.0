@@ -1,7 +1,7 @@
 
 export interface Course {
-    title: string;
-    subtitle: string;
+    title?: string;
+    subtitle?: string;
     image: string;
 }
 
@@ -10,4 +10,9 @@ export interface Content {
         maintitle: string;
         courses: Course[];
     };
+    cursosMaisComprados: {
+        maintitle: string;
+        courses: Course[];
+    };
 }
+
