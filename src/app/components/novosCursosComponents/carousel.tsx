@@ -1,8 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { Box, IconButton, Grid } from '@mui/material';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { Box, Grid } from '@mui/material';
+import { useSwipeable } from 'react-swipeable';
 import './carousel.css';
 
 interface CarouselProps {
@@ -42,22 +41,23 @@ const Carousel: React.FC<CarouselProps> = ({ children, itemsPerPage = 3, directi
         setAnimationClass('slide-in');
     }, [currentIndex]);
 
+    const handlers = useSwipeable({
+        onSwipedLeft: handleNextClick,
+        onSwipedRight: handlePrevClick,
+        preventScrollOnSwipe: true,
+        trackMouse: true
+    });
+
     return (
-        <Box>
-            <Box display="flex" justifyContent="space-between" alignItems="center">
-                <IconButton onClick={handlePrevClick}>
-                    <ArrowBackIosIcon sx={{ color: 'white' }} />
-                </IconButton>
-                <Grid container spacing={1} justifyContent="center" direction={direction}>
+        <Box {...handlers} sx={{ touchAction: 'pan-y', overflow: 'hidden', maxWidth: '100%'}}>
+            <Box display="flex" justifyContent="center" alignItems="center">
+                <Grid container spacing={1} justifyContent="center" direction={direction} sx={{ width: '100%' }}>
                     {getCurrentItems().map((child, index) => (
                         <Grid item key={index} className={animationClass} style={{ transition: 'transform 0.5s ease-in-out' }}>
                             {child}
                         </Grid>
                     ))}
                 </Grid>
-                <IconButton onClick={handleNextClick}>
-                    <ArrowForwardIosIcon sx={{ color: 'white' }} />
-                </IconButton>
             </Box>
         </Box>
     );
