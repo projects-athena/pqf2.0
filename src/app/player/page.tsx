@@ -1,4 +1,4 @@
-import React from 'react';
+mport React from 'react';
 import { Container, Typography } from '@mui/material';
 import VideoPlayer from '../components/Video/VideoPlayer';
 

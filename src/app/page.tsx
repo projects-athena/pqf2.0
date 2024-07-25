@@ -2,21 +2,22 @@
 'use client'
 
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import { Button, Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import CursoDestaque from './components/CursoDestaque/cursoDestaque';
+import CursoIndicacao from './components/CursoIndicacao/cursoIndicacao';
+import CarroselHome from './components/CarroselHome/carroselHome';
 import content from './content/content.json';
+import { EmblaOptionsType } from 'embla-carousel';
+import './components/CarroselHome/carroselHome.css';
 
-//import './components/CarroselDestaque/style.css';
-//import EmblaCarousel from './components/CarroselDestaque/EmblaCarousel'
-//import { EmblaOptionsType } from 'embla-carousel';
-
-/*const OPTIONS: EmblaOptionsType = { loop: true }
+const OPTIONS: EmblaOptionsType = { loop: true }
 const SLIDE_COUNT = 5
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys())*/
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
-const { maintitle, courses } = content.cursosDestaque;
+
+const { cursosDestaqueTitle, courses } = content.cursosDestaque;
 
 export default function Home() {
   return (
@@ -29,7 +30,7 @@ export default function Home() {
             py: 1,
             left: 0,
             margin: 0,
-            marginBottom: '35px'
+            marginBottom: 3
           }}
         >
           <Typography
@@ -57,13 +58,37 @@ export default function Home() {
           </Typography>
       </Box>
 
-      <Grid container spacing={2} sx={{ justifyContent: 'center' ,  marginBottom: 10}}>
+      <Button sx={{justifyContent: 'center', marginBottom: 3, width: '100%', color: 'secondary.contrastText', borderRadius: 5}} variant='contained' color='tertiary'>Matricule-se Já!</Button>
+
+      <Grid 
+        container 
+        spacing={2}
+        sx={{justifyContent: 'center', marginBottom: 3}}
+      >
         {courses.map((course) => (
-          <Grid item key={course.title} sx={{ textAlign: 'center' }}>
+          <Grid 
+            item 
+            key={course.title} 
+            xs={6}
+            md={3}
+            sx={{ 
+              display: 'flex', 
+              justifyContent: 'center', 
+            }}
+          >
             <CursoDestaque image={course.image} title={course.title} subtitle={course.subtitle} />
           </Grid>
         ))}
       </Grid>
+      
+      <Box sx={{marginBottom: 2}}>
+        <CursoIndicacao></CursoIndicacao>
+      </Box>
+
+      <Box sx={{marginBottom: 10}}>
+        <CarroselHome slides={courses} options={OPTIONS}></CarroselHome>
+      </Box>
+      
 
     </Container>
   );
