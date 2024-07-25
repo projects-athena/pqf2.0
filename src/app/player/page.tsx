@@ -1,9 +1,16 @@
-import { Box } from "@mui/material";
+mport React from 'react';
+import { Container, Typography } from '@mui/material';
+import VideoPlayer from '../components/Video/VideoPlayer';
 
-export default function Player() {
-    return(
-        <Box>
-            oi
-        </Box>
-    )
-}
+const VideoPage: React.FC = () => {
+  return (
+    <Container>
+      <Typography variant="h4" gutterBottom>
+        Video Player
+      </Typography>
+      <VideoPlayer />
+    </Container>
+  );
+};
+
+export default VideoPage;
