@@ -1,0 +1,47 @@
+{
+    "pageTitle": "",
+    "header": {
+        "title": ""
+    },
+    "cursosDestaqueHomeUser": {
+        "maintitle": "Recomendados",
+        "cursos": [
+          {
+            "id": "curso1",
+            "image": "/images/bg/formacao-social-media.jpg",
+            "professor": "Diego Barros",
+            "professorImage": "/images/teachers/dprofessor-diego-barros.png",
+            "curso": "Fundamentos de Python",
+            "duracao": "2 Horas",
+            "avaliacao": 5
+          },
+          {
+            "id": "curso2",
+            "image": "/images/bg/formacao-social-media.jpg",
+            "professor": "Diego Barros",
+            "professorImage": "/images/teachers/dprofessor-diego-barros.png",
+            "curso": "Fundamentos de Python",
+            "duracao": "2 Horas",
+            "avaliacao": 5
+          },
+          {
+            "id": "curso3",
+            "image": "/images/bg/formacao-social-media.jpg",
+            "professor": "Diego Barros",
+            "professorImage": "/images/teachers/dprofessor-diego-barros.png",
+            "curso": "Fundamentos de Python",
+            "duracao": "2 Horas",
+            "avaliacao": 5
+          },
+          {
+            "id": "curso4",
+            "image": "/images/bg/formacao-social-media.jpg",
+            "professor": "Diego Barros",
+            "professorImage": "/images/teachers/dprofessor-diego-barros.png",
+            "curso": "Fundamentos de Python",
+            "duracao": "2 Horas",
+            "avaliacao": 5
+          }
+        ]
+      }
+}
