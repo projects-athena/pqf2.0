@@ -27,10 +27,9 @@ interface IFormInput {
   acceptedTerms: boolean;
 }
 
-function Copyright(props: any) 
-{
+function Copyright(props: any) {
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+    <Typography sx={{color:"white"}} variant="body2" align="center" {...props}>
       {'Pra Quem Faz © '}
       <Link color="inherit" href="#">
         Termos de serviço
@@ -41,8 +40,7 @@ function Copyright(props: any)
   );
 }
 
-const FormCadastro: React.FC = () => 
-{
+const FormCadastro: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>({
     resolver: yupResolver(validationSchema)
   });
@@ -53,47 +51,49 @@ const FormCadastro: React.FC = () =>
 
   return (
     <>
-      <Container component="main" maxWidth="xs" sx={{bgcolor: 'secondary.main', color: 'secondary.contrastText',  borderRadius: 2, marginTop: -7, marginBottom: 10}}>
+      <Container component="main" maxWidth="xs" sx={{color: 'secondary.contrastText', borderRadius: 2 }}>
         <CssBaseline />
+        <Typography component="h1" variant="h4" align="center" sx={{ marginTop: 5 }}>
+            Registre-se!
+          </Typography>
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 5,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            bgcolor: 'secondary.main',
+            padding: 3,
+            borderRadius: 2,
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main'}}>
-            <AccountCircleIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Registre-se!
-          </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   autoComplete="given-name"
                   required
                   fullWidth
                   id="nome"
-                  label="Nome"
+                  placeholder="Nome"
                   autoFocus
                   {...register('nome')}
                   error={!!errors.nome}
                   helperText={errors.nome?.message}
+                  sx={{ bgcolor: "white", borderRadius: 5 }}
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+              <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
                   id="sobrenome"
-                  label="Sobrenome"
+                  placeholder="Sobrenome"
                   autoComplete="family-name"
                   {...register('sobreNome')}
                   error={!!errors.sobreNome}
                   helperText={errors.sobreNome?.message}
+                  sx={{ bgcolor: "white", borderRadius: 5 }}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -101,45 +101,48 @@ const FormCadastro: React.FC = () =>
                   required
                   fullWidth
                   id="email"
-                  label="Endereço de Email"
+                  placeholder="Endereço de Email"
                   autoComplete="email"
                   {...register('email')}
                   error={!!errors.email}
                   helperText={errors.email?.message}
+                  sx={{ bgcolor: "white", borderRadius: 5 }}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  label="Senha"
+                  placeholder="Senha"
                   type="password"
                   id="password"
                   autoComplete="new-password"
                   {...register('senha')}
                   error={!!errors.senha}
                   helperText={errors.senha?.message}
+                  sx={{ bgcolor: "white", borderRadius: 5 }}
                 />
               </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
                   fullWidth
-                  label="Confirme sua senha"
+                  placeholder="Confirme sua senha"
                   type="password"
                   id="confirmationpassword"
                   autoComplete="new-password"
                   {...register('confirmacaoSenha')}
                   error={!!errors.confirmacaoSenha}
                   helperText={errors.confirmacaoSenha?.message}
+                  sx={{ bgcolor: "white", borderRadius: 5 }}
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
                   control={
-                    <Checkbox 
-                      {...register('acceptedTerms')} 
-                      sx={{ color: '#f50057','&.Mui-checked': {color: '#f50057',},}}
+                    <Checkbox
+                      {...register('acceptedTerms')}
+                      sx={{ color: '#f50057', '&.Mui-checked': { color: '#f50057', }, }}
                     />
                   }
                   label="Estou de acordo com os termos e condições previstos em lei, aplicam-se T&C"
@@ -153,13 +156,14 @@ const FormCadastro: React.FC = () =>
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              color="tertiary"
+              sx={{ mt: 3, mb: 2, borderRadius: 5 }}
             >
               Entrar
             </Button>
             <Grid container justifyContent="center">
               <Grid item>
-                <Link href={"/Login"} variant="inherit">
+                <Link sx={{color:"white"}} href={"/Login"} variant="inherit">
                   Já possui uma conta? Entre aqui!
                 </Link>
               </Grid>

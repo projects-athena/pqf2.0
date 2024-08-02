@@ -3,7 +3,7 @@ import FormCadastro from '../components/FormCadastro/FormCadastro';
 
 const Cadastro: React.FC = () => {
   return (
-  <FormCadastro />
+    <FormCadastro />
   );
 };
 
