@@ -1,7 +1,10 @@
+"use client"
+
 import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { EmblaOptionsType } from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import './carroselHome.css';
 
 type CarroselDestaqueProps = {
   slides: React.ReactNode[];

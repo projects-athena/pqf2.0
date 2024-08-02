@@ -10,7 +10,6 @@ import CursoIndicacao from './components/CursoIndicacao/cursoIndicacao';
 import CarroselHome from './components/CarroselHome/carroselHome';
 import content from './content/content.json';
 import { EmblaOptionsType } from 'embla-carousel';
-import './components/CarroselHome/carroselHome.css';
 
 
 const { cursosDestaqueTitle, courses } = content.cursosDestaque;
