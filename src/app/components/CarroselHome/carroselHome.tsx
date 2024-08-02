@@ -1,22 +1,22 @@
 import React from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
 import { EmblaOptionsType } from 'embla-carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import useEmblaCarousel from 'embla-carousel-react';
-import CursoDestaque from '../CursoDestaque/cursoDestaque';
 
-interface Slide {
-  image: string;
-  title: string;
-  subtitle: string;
-}
-
-type PropType = {
-  slides: Slide[];
-  options?: EmblaOptionsType;
+type CarroselDestaqueProps = {
+  slides: React.ReactNode[];
+  autoplay?: boolean;
+  loop?: boolean;
 };
 
-const CarroselDestaque: React.FC<PropType> = ({ slides, options }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
+const CarroselDestaque: React.FC<CarroselDestaqueProps> = ({ slides, autoplay = false, loop = true }) => {
+  const options: EmblaOptionsType = {
+    loop: loop,
+  };
+
+  const plugins = autoplay ? [Autoplay()] : [];
+
+  const [emblaRef] = useEmblaCarousel(options, plugins);
 
   return (
     <section className="embla">
@@ -24,11 +24,7 @@ const CarroselDestaque: React.FC<PropType> = ({ slides, options }) => {
         <div className="embla__container">
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
-              <CursoDestaque
-                image={slide.image}
-                title={slide.title}
-                subtitle={slide.subtitle}
-              />
+              {slide}
             </div>
           ))}
         </div>
@@ -38,3 +34,4 @@ const CarroselDestaque: React.FC<PropType> = ({ slides, options }) => {
 };
 
 export default CarroselDestaque;
+
