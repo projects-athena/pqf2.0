@@ -8,13 +8,13 @@ const VideoPage: React.FC = () => {
 
   return (
     <Container>
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{ height: '100vh' }}>
         <Grid item xs={12} md={6}>
-          <Box sx={{ width: '100%', height: '100%', marginBottom: 2 }}>
+          <Box sx={{ width: '100%', marginBottom: 5, position: 'fixed', top: 0, left: 0  }}>
             <VideoPlayer />
           </Box>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} sx={{marginTop:22}}>
           <Typography sx={{ color: 'white' }} variant="h4" gutterBottom>
             {course.nome}
           </Typography>
@@ -22,10 +22,10 @@ const VideoPage: React.FC = () => {
             {course.descricao}
           </Typography>
           <Box sx={{ marginBottom: 2 }}>
-            <Typography sx={{ color: 'white' }} variant="h6">Rating: {course.rating}</Typography>
+            <Typography sx={{ color: 'white' }} variant="h6">Rating: {course.rating} x</Typography>
           </Box>
-          <Box sx={{ marginBottom: 2 }}>
-            <Typography sx={{ color: 'white' }} variant="h6">Módulos do Curso</Typography>
+          <Typography sx={{ color: 'white' }} variant="h6">Módulos do Curso</Typography>
+          <Box sx={{ marginBottom: 2, height: '28vh', overflowY: 'auto', padding: 2, borderRadius: 1 }}>
             <Box>
               {course.aulas.map((aula) => (
                 <Box key={aula.id} sx={{ marginBottom: 1, padding: 1, cursor: 'pointer' }}>
@@ -35,8 +35,10 @@ const VideoPage: React.FC = () => {
               ))}
             </Box>
           </Box>
-          <Typography sx={{ color: 'white' }} variant="h6" gutterBottom>Instrutor</Typography>
-          <Typography sx={{ color: 'white' }} variant="body1">{course.professor}</Typography>
+          <Box sx={{ marginBottom: 5 }}>
+            <Typography sx={{ color: 'white' }} variant="h6" gutterBottom>Instrutor</Typography>
+            <Typography sx={{ color: 'white' }} variant="body1">{course.professor}</Typography>
+          </Box>
         </Grid>
       </Grid>
     </Container>
