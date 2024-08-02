@@ -10,9 +10,6 @@ import CursoIndicacao from './components/CursoIndicacao/cursoIndicacao';
 import CarroselHome from './components/CarroselHome/carroselHome';
 import content from './content/content.json';
 import { EmblaOptionsType } from 'embla-carousel';
-import './components/CarroselHome/carroselHome.css';
-
-const OPTIONS: EmblaOptionsType = { loop: true }
 
 
 const { cursosDestaqueTitle, courses } = content.cursosDestaque;
@@ -62,8 +59,14 @@ export default function Home() {
 
       <Button sx={{justifyContent: 'center', marginBottom: 3, width: '100%', color: 'secondary.contrastText', borderRadius: 5}} variant='contained' color='tertiary'>Matricule-se Já!</Button>
       
-      <Box sx={{marginBottom: 4}}>
-        <CarroselHome slides={courses} options={OPTIONS}></CarroselHome>
+      <Box sx={{ marginBottom: 4 }}>
+        <CarroselHome autoplay={true} slides={courses.map((course, index) => (
+          <CursoDestaque 
+            key={index}
+            image={course.image}
+            title={course.title} 
+            subtitle={course.subtitle} />
+        ))} />
       </Box>
       
 

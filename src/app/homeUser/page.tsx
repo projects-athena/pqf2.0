@@ -1,7 +1,10 @@
+"use client"
+
 import React from 'react';
 import { Button, Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
+import CarroselHome from '../components/CarroselHome/carroselHome';
 import CursoDestaqueHomeUser from '../components/CursoDestaqueHomeUser/cursoDestaqueHomeUser';
 import content from '../content/userHome.content.json';
 
@@ -25,14 +28,18 @@ const HomeUser: React.FC = () => {
               {maintitle}
           </Typography>
 
-          <CursoDestaqueHomeUser 
-          image={cursos[0].image}
-          professor={cursos[0].professor}
-          professorImage={cursos[0].professorImage}
-          curso={cursos[0].curso}
-          duracao={cursos[0].duracao}
-          avaliacao= {cursos[0].avaliacao}>
-          </CursoDestaqueHomeUser>
+          <Box sx={{ marginBottom: 4 }}>
+            <CarroselHome autoplay={true} slides={cursos.map((curso, index) => (
+              <CursoDestaqueHomeUser 
+                key={index}
+                image={curso.image}
+                professor={curso.professor}
+                professorImage={curso.professorImage}
+                curso={curso.curso}
+                duracao={curso.duracao}
+                avaliacao= {curso.avaliacao}/>
+            ))} />
+          </Box>
         </Box>
     </Container>
   );

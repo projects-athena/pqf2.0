@@ -6,6 +6,12 @@
   --slide-size: 75%;
 }
 
+@media (min-width: 1024px) {
+  .embla {
+    --slide-size: 28%;
+  }
+}
+
 .embla__viewport {
   overflow: hidden;
 }

@@ -26,7 +26,7 @@ const CursoDestaqueHomeUser: React.FC<CursoDestaqueHomeUserProps> = ({ image, pr
   };
 
   return (
-    <Card sx={{ maxWidth: '100%', position: 'relative', backgroundColor: 'secondary.main', color: 'secondary.contrastText'}}>
+    <Card sx={{ width: '100%', position: 'relative', backgroundColor: 'secondary.main', color: 'secondary.contrastText'}}>
         <CardMedia
             component="img"
             height="195"
@@ -69,7 +69,7 @@ const CursoDestaqueHomeUser: React.FC<CursoDestaqueHomeUserProps> = ({ image, pr
         </Box>
         
 
-        <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
+        <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
           <Typography variant="h5" component="div" gutterBottom>
             {curso}
           </Typography>
