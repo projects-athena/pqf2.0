@@ -22,7 +22,7 @@ export const validationSchema = Yup.object().shape({
     .required('Senha é obrigatória'),
 
   confirmacaoSenha: Yup.string()
-    .oneOf([Yup.ref('password'), undefined], 'As senhas não coincidem')
+    .oneOf([Yup.ref('senha'), undefined], 'As senhas não coincidem')
     .required('Confirmação de senha é obrigatória'),
 
   acceptedTerms: Yup.boolean()
