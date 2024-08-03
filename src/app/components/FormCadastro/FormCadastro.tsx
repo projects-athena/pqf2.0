@@ -1,37 +1,12 @@
 'use client';
 
 import * as React from 'react';
-import { useRouter } from 'next/navigation';
-import {
-  Button,
-  CssBaseline,
-  TextField,
-  FormControlLabel,
-  Checkbox,
-  Link,
-  Grid,
-  Box,
-  Typography,
-  Container,
-  FormHelperText,
-} from '@mui/material';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { validationSchema } from '../../utils/validationSchema';
-import { IFormInput } from '@/app/types/types';
+import { Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container, FormHelperText } from '@mui/material';
+import { useFormCadastro } from './useFormCadastro';
 import Copyright from '../Copyright/Copyright';
 
 const FormCadastro: React.FC = () => {
-  const router = useRouter();
-  const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>({
-    resolver: yupResolver(validationSchema),
-  });
-
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log(data);
-    localStorage.setItem('userData', JSON.stringify(data));
-    router.push('/Login');
-  };
+  const { register, handleSubmit, onSubmit, errors } = useFormCadastro();
 
   return (
     <Container component="main" maxWidth="xs" sx={{ color: 'secondary.contrastText', borderRadius: 2 }}>

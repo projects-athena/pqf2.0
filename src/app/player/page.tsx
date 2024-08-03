@@ -22,7 +22,7 @@ const VideoPage: React.FC = () => {
             {course.descricao}
           </Typography>
           <Box sx={{ marginBottom: 2 }}>
-            <Typography sx={{ color: 'white' }} variant="h6">Rating: {course.rating} x</Typography>
+            <Typography sx={{ color: 'white' }} variant="h6">Rating: x</Typography>
           </Box>
           <Typography sx={{ color: 'white' }} variant="h6">Módulos do Curso</Typography>
           <Box sx={{ marginBottom: 2, height: '28vh', overflowY: 'auto', padding: 2, borderRadius: 1 }}>
