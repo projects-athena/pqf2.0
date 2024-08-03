@@ -35,7 +35,7 @@ const Header = () => {
             </Link>
           </Typography>
         </Box>
-        <Button href={"/Cadastro"} variant='contained' color='tertiary'>Entre</Button>
+        <Button href={"/Login"} variant='contained' color='tertiary'>Entre</Button>
       </Toolbar>
     </AppBar>
   );
