@@ -26,7 +26,7 @@ const Footer = () => {
           <Grid item xs={2.4}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <Button color="primary" fullWidth>
+                <Button href={"/"} color="primary" fullWidth>
                   <PlayCircleOutlineIcon sx={{ color: 'white' }} />
                 </Button>
               </Grid>
@@ -38,7 +38,7 @@ const Footer = () => {
           <Grid item xs={2.4}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <Button color="primary" fullWidth>
+                <Button href={"/"} color="primary" fullWidth>
                   <ExploreIcon sx={{ color: 'white' }} />
                 </Button>
               </Grid>
