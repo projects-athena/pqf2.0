@@ -1,9 +1,9 @@
 import React from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import content from '../content/content.json';
-import Carousel from '../components/novosCursosComponents/carousel';
-import CardNovoCurso from '../components/novosCursosComponents/cardsNovosCursosDisponiveis';
-import CardCursosMaisComprados from '../components/novosCursosComponents/cardsCursosMaisComprados';
+import Carousel from '../components/NovosCursosComponents/carousel';
+import CardNovoCurso from '../components/NovosCursosComponents/cardsNovosCursosDisponiveis';
+import CardCursosMaisComprados from '../components/NovosCursosComponents/cardsCursosMaisComprados';
 
 export default function NovosCursos() {
   const { novosCursos, cursosMaisComprados } = content;

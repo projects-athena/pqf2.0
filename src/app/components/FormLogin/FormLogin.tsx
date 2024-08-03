@@ -1,34 +1,12 @@
 'use client';
 
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
+import * as React from 'react';
 import { Container, Box, Typography, TextField, Button, Grid, Link, CssBaseline } from '@mui/material';
-import { loginValidationSchema } from '../../utils/validationSchema';
-import { ILoginFormInput } from '@/app/types/types';
+import { useFormLogin } from './useFormLogin';
 import Copyright from '../Copyright/Copyright';
 
 const FormLogin: React.FC = () => {
-  const router = useRouter();
-  const { register, handleSubmit, formState: { errors } } = useForm<ILoginFormInput>({
-    resolver: yupResolver(loginValidationSchema)
-  });
-
-  const onSubmit: SubmitHandler<ILoginFormInput> = data => {
-    const storedUserData = localStorage.getItem('userData');
-    if (storedUserData) {
-      const user = JSON.parse(storedUserData);
-      if (user.email === data.email && user.senha === data.senha) {
-        alert('Login successful!');
-        router.push('/');
-      } else {
-        alert('Invalid email or password');
-      }
-    } else {
-      alert('No user found. Please register first.');
-    }
-  };
+  const { register, handleSubmit, onSubmit, errors } = useFormLogin();
 
   return (
     <Container component="main" maxWidth="xs" sx={{ color: 'secondary.contrastText', borderRadius: 2 }}>
