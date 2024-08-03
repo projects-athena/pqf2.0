@@ -16,3 +16,16 @@ export interface Content {
     };
 }
 
+export interface IFormInput {
+    nome: string;
+    sobreNome: string;
+    email: string;
+    senha: string;
+    confirmacaoSenha: string;
+    acceptedTerms: boolean;
+}
+
+export interface ILoginFormInput {
+    email: string;
+    senha: string;
+}
