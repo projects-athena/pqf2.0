@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Container, Box, Typography, TextField, Button, Grid, Link, CssBaseline } from '@mui/material';
+import { Container, Box, Typography, Button, Grid, Link, CssBaseline, OutlinedInput, FormControl, FormHelperText } from '@mui/material';
 import { useFormLogin } from './useFormLogin';
 import Copyright from '../Copyright/Copyright';
 
@@ -9,7 +9,7 @@ const FormLogin: React.FC = () => {
   const { register, handleSubmit, onSubmit, errors } = useFormLogin();
 
   return (
-    <Container component="main" maxWidth="xs" sx={{ color: 'secondary.contrastText', borderRadius: 2 }}>
+    <Container component="main" maxWidth="xs" sx={{ color: 'secondary.contrastText', borderRadius: 2, marginBottom: 10 }}>
       <CssBaseline />
       <Typography component="h1" variant="h4" align="center" sx={{ marginTop: 5 }}>
         Entrar
@@ -26,32 +26,34 @@ const FormLogin: React.FC = () => {
         }}
       >
         <Box component="form" onSubmit={handleSubmit(onSubmit)} noValidate sx={{ mt: 1 }}>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            placeholder="Endereço de Email"
-            autoComplete="email"
-            autoFocus
-            {...register('email')}
-            error={!!errors.email}
-            helperText={errors.email?.message}
-            sx={{ bgcolor: "white", borderRadius: 5 }}
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            placeholder="Senha"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            {...register('senha')}
-            error={!!errors.senha}
-            helperText={errors.senha?.message}
-            sx={{ bgcolor: "white", borderRadius: 5 }}
-          />
+
+        <FormControl margin="normal" error={!!errors.email} fullWidth>
+            <OutlinedInput
+              id="email"
+              required
+              autoComplete="email"
+              autoFocus
+              {...register('email')}
+              sx={{ bgcolor: "white", borderRadius:0.8}}
+              placeholder="Endereço de Email"
+            />
+            <FormHelperText>{errors.email?.message}</FormHelperText>
+        </FormControl>
+
+        <FormControl margin="normal" error={!!errors.senha} fullWidth>
+            <OutlinedInput
+              id="password"
+              type="password"
+              required
+              autoComplete="current-password"
+              autoFocus
+              {...register('senha')}
+              sx={{ bgcolor: "white", borderRadius:0.8}}
+              placeholder="Senha"
+            />
+            <FormHelperText>{errors.senha?.message}</FormHelperText>
+        </FormControl>
+          
           <Button
             type="submit"
             fullWidth

@@ -1,4 +1,4 @@
-import { Button, Typography, Card, CardMedia, CardContent, CardActions } from '@mui/material';
+import { Button, Typography, Card, CardMedia, CardContent, CardActionArea } from '@mui/material';
 import Link from '@mui/material/Link';
 
 interface CursoDestaqueProps {
@@ -20,6 +20,7 @@ const CursoDestaque: React.FC<CursoDestaqueProps> = ({ image, title, subtitle })
         color: 'secondary.contrastText',
       }}
     >
+      <CardActionArea href={'/Login'}>
       <CardMedia
         component="img"
         height="140"
@@ -52,6 +53,7 @@ const CursoDestaque: React.FC<CursoDestaqueProps> = ({ image, title, subtitle })
           {subtitle}
         </Typography>
       </CardContent>
+      </CardActionArea>
     </Card>
   );
 };

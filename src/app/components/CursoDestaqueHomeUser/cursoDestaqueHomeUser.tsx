@@ -1,6 +1,6 @@
 "use client"
 
-import { Button, Typography, Card, CardMedia, CardContent, CardActions, IconButton, Box, Avatar } from '@mui/material';
+import { Button, Typography, Card, CardMedia, CardContent, IconButton, Box, Avatar } from '@mui/material';
 //import { Box, Button, Card, CardContent, Typography, IconButton, Avatar } from '@mui/material';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 interface CursoDestaqueHomeUserProps {
+  id: string;
   image: string;
   professor: string;
   professorImage: string;
@@ -17,7 +18,7 @@ interface CursoDestaqueHomeUserProps {
   avaliacao: number;
 }
 
-const CursoDestaqueHomeUser: React.FC<CursoDestaqueHomeUserProps> = ({ image, professor, professorImage, curso, duracao, avaliacao }) => {
+const CursoDestaqueHomeUser: React.FC<CursoDestaqueHomeUserProps> = ({ id, image, professor, professorImage, curso, duracao, avaliacao }) => {
 
   const [iconColor, setIconColor] = useState('secondary.contrastText');
 
@@ -80,7 +81,7 @@ const CursoDestaqueHomeUser: React.FC<CursoDestaqueHomeUserProps> = ({ image, pr
               <StarIcon />
               <Typography variant="body2">{avaliacao}</Typography>
             </Box>
-            <Button sx={{borderRadius: 5}} variant="contained" color="tertiary">
+            <Button href={'/player'} sx={{borderRadius: 5}} variant="contained" color="tertiary">
               Entre!
             </Button>
           </Box>
