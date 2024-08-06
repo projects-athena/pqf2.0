@@ -32,6 +32,7 @@ const HomeUser: React.FC = () => {
             <CarroselHome autoplay={true} slides={cursos.map((curso, index) => (
               <CursoDestaqueHomeUser 
                 key={index}
+                id={curso.id}
                 image={curso.image}
                 professor={curso.professor}
                 professorImage={curso.professorImage}

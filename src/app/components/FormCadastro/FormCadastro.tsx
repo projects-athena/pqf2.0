@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container, FormHelperText } from '@mui/material';
+import { Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container, OutlinedInput, FormControl, FormHelperText } from '@mui/material';
 import { useFormCadastro } from './useFormCadastro';
 import Copyright from '../Copyright/Copyright';
 
@@ -9,7 +9,7 @@ const FormCadastro: React.FC = () => {
   const { register, handleSubmit, onSubmit, errors } = useFormCadastro();
 
   return (
-    <Container component="main" maxWidth="xs" sx={{ color: 'secondary.contrastText', borderRadius: 2 }}>
+    <Container component="main" maxWidth="xs" sx={{ color: 'secondary.contrastText', borderRadius: 2, mb: 10 }}>
       <CssBaseline />
       <Typography component="h1" variant="h4" align="center" sx={{ marginTop: 5 }}>
         Registre-se!
@@ -28,72 +28,76 @@ const FormCadastro: React.FC = () => {
         <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
-              <TextField
-                autoComplete="given-name"
-                required
-                fullWidth
-                id="nome"
-                placeholder="Nome"
-                autoFocus
-                {...register('nome')}
-                error={!!errors.nome}
-                helperText={errors.nome?.message}
-                sx={{ bgcolor: 'white', borderRadius: 5 }}
-              />
+              <FormControl error={!!errors.nome} fullWidth>
+                  <OutlinedInput
+                    id="nome"
+                    required
+                    autoComplete="given-name"
+                    autoFocus
+                    {...register('nome')}
+                    sx={{ bgcolor: "white", borderRadius:0.8}}
+                    placeholder="Nome"
+                  />
+                  <FormHelperText>{errors.nome?.message}</FormHelperText>
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                id="sobrenome"
-                placeholder="Sobrenome"
-                autoComplete="family-name"
-                {...register('sobreNome')}
-                error={!!errors.sobreNome}
-                helperText={errors.sobreNome?.message}
-                sx={{ bgcolor: 'white', borderRadius: 5 }}
-              />
+              <FormControl error={!!errors.sobreNome} fullWidth>
+                  <OutlinedInput
+                    id="sobrenome"
+                    required
+                    autoComplete="family-name"
+                    autoFocus
+                    {...register('sobreNome')}
+                    sx={{ bgcolor: "white", borderRadius:0.8}}
+                    placeholder="Sobrenome"
+                  />
+                  <FormHelperText>{errors.sobreNome?.message}</FormHelperText>
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                id="email"
-                placeholder="Endereço de Email"
-                autoComplete="email"
-                {...register('email')}
-                error={!!errors.email}
-                helperText={errors.email?.message}
-                sx={{ bgcolor: 'white', borderRadius: 5 }}
-              />
+              <FormControl error={!!errors.email} fullWidth>
+                  <OutlinedInput
+                    id="email"
+                    required
+                    autoComplete="email"
+                    autoFocus
+                    {...register('email')}
+                    sx={{ bgcolor: "white", borderRadius:0.8}}
+                    placeholder="Endereço de Email"
+                  />
+                  <FormHelperText>{errors.email?.message}</FormHelperText>
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                placeholder="Senha"
-                type="password"
-                id="password"
-                autoComplete="new-password"
-                {...register('senha')}
-                error={!!errors.senha}
-                helperText={errors.senha?.message}
-                sx={{ bgcolor: 'white', borderRadius: 5 }}
-              />
+              <FormControl error={!!errors.senha} fullWidth>
+                  <OutlinedInput
+                    type="password"
+                    id="password"
+                    required
+                    autoComplete="new-password"
+                    autoFocus
+                    {...register('senha')}
+                    sx={{ bgcolor: "white", borderRadius:0.8}}
+                    placeholder="Senha"
+                  />
+                  <FormHelperText>{errors.senha?.message}</FormHelperText>
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                placeholder="Confirme sua senha"
-                type="password"
-                id="confirmationpassword"
-                autoComplete="new-password"
-                {...register('confirmacaoSenha')}
-                error={!!errors.confirmacaoSenha}
-                helperText={errors.confirmacaoSenha?.message}
-                sx={{ bgcolor: 'white', borderRadius: 5 }}
-              />
+              <FormControl error={!!errors.confirmacaoSenha} fullWidth>
+                  <OutlinedInput
+                    type="password"
+                    id="confirmationpassword"
+                    required
+                    autoComplete="new-password"
+                    autoFocus
+                    {...register('confirmacaoSenha')}
+                    sx={{ bgcolor: "white", borderRadius:0.8}}
+                    placeholder="Confirme sua senha"
+                  />
+                  <FormHelperText>{errors.confirmacaoSenha?.message}</FormHelperText>
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
