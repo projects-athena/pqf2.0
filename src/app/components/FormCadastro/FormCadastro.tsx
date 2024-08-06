@@ -85,18 +85,19 @@ const FormCadastro: React.FC = () => {
               </FormControl>
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                required
-                fullWidth
-                placeholder="Confirme sua senha"
-                type="password"
-                id="confirmationpassword"
-                autoComplete="new-password"
-                {...register('confirmacaoSenha')}
-                error={!!errors.confirmacaoSenha}
-                helperText={errors.confirmacaoSenha?.message}
-                sx={{ bgcolor: 'white', borderRadius: 5 }}
-              />
+              <FormControl error={!!errors.confirmacaoSenha} fullWidth>
+                  <OutlinedInput
+                    type="password"
+                    id="confirmationpassword"
+                    required
+                    autoComplete="new-password"
+                    autoFocus
+                    {...register('confirmacaoSenha')}
+                    sx={{ bgcolor: "white", borderRadius:0.8}}
+                    placeholder="Confirme sua senha"
+                  />
+                  <FormHelperText>{errors.confirmacaoSenha?.message}</FormHelperText>
+              </FormControl>
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
