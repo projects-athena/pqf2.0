@@ -4,9 +4,18 @@ import * as React from 'react';
 import { Container, Box, Typography, Button, Grid, Link, CssBaseline, OutlinedInput, FormControl, FormHelperText } from '@mui/material';
 import { useFormLogin } from './useFormLogin';
 import Copyright from '../Copyright/Copyright';
+import SucessToast from '../Toasts/SucessToast';
 
 const FormLogin: React.FC = () => {
-  const { register, handleSubmit, onSubmit, errors } = useFormLogin();
+  const { 
+    register, 
+    handleSubmit, 
+    onSubmit,
+    errors,
+    toastOpen,
+    toastMessage,
+    toastSeverity,
+    handleToastClose } = useFormLogin();
 
   return (
     <Container component="main" maxWidth="xs" sx={{ color: 'secondary.contrastText', borderRadius: 2, marginBottom: 10 }}>
@@ -78,6 +87,11 @@ const FormLogin: React.FC = () => {
         </Box>
       </Box>
       <Copyright />
+      <SucessToast 
+        open={toastOpen}
+        onClose={handleToastClose}
+        message={toastMessage}
+        severity={toastSeverity}></SucessToast>
     </Container>
   );
 }

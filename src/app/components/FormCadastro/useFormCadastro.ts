@@ -5,6 +5,7 @@ import { validationSchema } from '../../utils/validationSchema';
 import { IFormInput } from '@/app/types/types';
 
 export const useFormCadastro = () => {
+
   const router = useRouter();
   const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>({
     resolver: yupResolver(validationSchema),
