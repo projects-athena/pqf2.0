@@ -1,3 +1,4 @@
+// layouts.tsx
 'use client';
 
 import { ReactNode, useEffect } from 'react';
@@ -9,6 +10,7 @@ import Footer from './components/Footer/footer';
 import { Container, Box } from '@mui/material';
 import { styled } from '@mui/system';
 import { usePathname } from 'next/navigation';
+import { AuthProvider } from './context/AuthContext';
 
 const GlobalBodyStyles = styled('body')({
   backgroundColor: '#161616'
@@ -37,11 +39,13 @@ export default function RootLayout({
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <GlobalBodyStyles>
-            {showHeader && <Header />}
-            <Container component="main" sx={{ mt: 2, mb: 2 }}>
-              {children}
-            </Container>
-            <Footer />
+            <AuthProvider>
+              {showHeader && <Header />}
+              <Container component="main" sx={{ mt: 2, mb: 2 }}>
+                {children}
+              </Container>
+              <Footer />
+            </AuthProvider>
           </GlobalBodyStyles>
         </ThemeProvider>
       </body>
