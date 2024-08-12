@@ -16,7 +16,6 @@ export const useFormCadastro = () => {
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     cadastrar(data.nome, data.sobreNome, data.email, data.senha);
     console.log(data);
-    //localStorage.setItem('userData', JSON.stringify(data));
     router.push('/Login');
   };
 

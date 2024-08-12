@@ -1,11 +1,10 @@
 "use client"
 
 import { Button, Typography, Card, CardMedia, CardContent, IconButton, Box, Avatar } from '@mui/material';
-//import { Box, Button, Card, CardContent, Typography, IconButton, Avatar } from '@mui/material';
+import { useRouter } from 'next/navigation';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import StarIcon from '@mui/icons-material/Star';
-import Image from 'next/image';
 import { useState } from 'react';
 
 interface CursoDestaqueHomeUserProps {
@@ -20,6 +19,7 @@ interface CursoDestaqueHomeUserProps {
 
 const CursoDestaqueHomeUser: React.FC<CursoDestaqueHomeUserProps> = ({ id, image, professor, professorImage, curso, duracao, avaliacao }) => {
 
+  const router = useRouter();
   const [iconColor, setIconColor] = useState('secondary.contrastText');
 
   const handleClick = () => {
@@ -81,7 +81,7 @@ const CursoDestaqueHomeUser: React.FC<CursoDestaqueHomeUserProps> = ({ id, image
               <StarIcon />
               <Typography variant="body2">{avaliacao}</Typography>
             </Box>
-            <Button href={'/player'} sx={{borderRadius: 5}} variant="contained" color="tertiary">
+            <Button onClick={() => { router.push('/player'); }} sx={{borderRadius: 5}} variant="contained" color="tertiary">
               Entre!
             </Button>
           </Box>

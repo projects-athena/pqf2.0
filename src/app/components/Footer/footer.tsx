@@ -1,4 +1,3 @@
-// components/Footer.tsx
 import React from 'react';
 import { Box, Container, Typography, Grid, Button } from '@mui/material';
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
@@ -6,8 +5,10 @@ import ExploreIcon from '@mui/icons-material/Explore';
 import ImportContactsIcon from '@mui/icons-material/ImportContacts';
 import HeadphonesIcon from '@mui/icons-material/Headphones';
 import SearchIcon from '@mui/icons-material/Search';
+import { useRouter } from 'next/navigation';
 
 const Footer = () => {
+  const router = useRouter();
   return (
     <Box
       component="footer" 
@@ -26,7 +27,7 @@ const Footer = () => {
           <Grid item xs={2.4}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <Button href={"/"} color="primary" fullWidth>
+                <Button onClick={() => { router.push('/'); }} color="primary" fullWidth>
                   <PlayCircleOutlineIcon sx={{ color: 'white' }} />
                 </Button>
               </Grid>
@@ -38,7 +39,7 @@ const Footer = () => {
           <Grid item xs={2.4}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <Button href={"/"} color="primary" fullWidth>
+                <Button onClick={() => { router.push('/'); }} color="primary" fullWidth>
                   <ExploreIcon sx={{ color: 'white' }} />
                 </Button>
               </Grid>
@@ -62,7 +63,7 @@ const Footer = () => {
           <Grid item xs={2.4}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <Button color="primary" fullWidth>
+                <Button onClick={() => { router.push('/'); }} color="primary" fullWidth>
                   <HeadphonesIcon sx={{ color: 'white' }} />
                 </Button>
               </Grid>
@@ -74,7 +75,7 @@ const Footer = () => {
           <Grid item xs={2.4}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <Button color="primary" fullWidth>
+                <Button onClick={() => { router.push('/'); }} color="primary" fullWidth>
                   <SearchIcon sx={{ color: 'white' }} />
                 </Button>
               </Grid>

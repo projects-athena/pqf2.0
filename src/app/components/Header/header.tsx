@@ -1,10 +1,13 @@
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import Link from '@mui/material/Link';
 import Image from "next/image";
 import { useLayout } from '../../context/LayoutContext';
 
 const Header = () => {
+  
+  const router = useRouter();
   const { showHeader } = useLayout();
 
   if (!showHeader) {
@@ -35,7 +38,7 @@ const Header = () => {
             </Link>
           </Typography>
         </Box>
-        <Button href={"/Login"} variant='contained' color='tertiary'>Entre</Button>
+        <Button onClick={() => { router.push('/Login'); }} variant='contained' color='tertiary'>Entre</Button>
       </Toolbar>
     </AppBar>
   );

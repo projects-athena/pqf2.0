@@ -1,5 +1,5 @@
-import { Button, Typography, Card, CardMedia, CardContent, CardActionArea } from '@mui/material';
-import Link from '@mui/material/Link';
+import { Typography, Card, CardMedia, CardContent, CardActionArea } from '@mui/material';
+import { useRouter } from 'next/navigation';
 
 interface CursoDestaqueProps {
   image: string;
@@ -8,6 +8,9 @@ interface CursoDestaqueProps {
 }
 
 const CursoDestaque: React.FC<CursoDestaqueProps> = ({ image, title, subtitle }) => {
+
+  const router = useRouter();
+
   return (
     <Card
       sx={{
@@ -20,7 +23,7 @@ const CursoDestaque: React.FC<CursoDestaqueProps> = ({ image, title, subtitle })
         color: 'secondary.contrastText',
       }}
     >
-      <CardActionArea href={'/Login'}>
+      <CardActionArea onClick={() => { router.push('/player'); }}>
       <CardMedia
         component="img"
         height="140"

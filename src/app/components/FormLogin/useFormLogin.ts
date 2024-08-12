@@ -21,39 +21,27 @@ export const useFormLogin = () => {
 
   const onSubmit: SubmitHandler<ILoginFormInput> = data => {
 
-    switch (login(data.email, data.senha))
+    let checkLog = login(data.email, data.senha)
+    if (checkLog == 1)
     {
-      case 1:
-        setToastMessage(`Seja Bem Vindo de volta!`);
-        setToastSeverity('success');
-        router.push('/');
-      case 0: 
-        setToastMessage('Email ou Senha Incorretos.');
-        setToastSeverity('error');
-      case -1:
-        setToastMessage('Usuário não encontrado. Por favor, crie uma conta.');
-        setToastSeverity('error');
+      setToastMessage(`Seja Bem Vindo de volta!`);
+      setToastSeverity('success');
+      router.push('/');
     }
-    setToastOpen(true);
-
-
-    /*const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      const parsedUser: User = JSON.parse(storedUser);
-      if (parsedUser.email === data.email && parsedUser.senha === data.senha) {
-        setUser(parsedUser);
-        setToastMessage(`Seja Bem Vindo de volta, ${parsedUser.nome}!`);
-        setToastSeverity('success');
-        router.push('/homeUser');
-      } else {
-        setToastMessage('Email ou Senha Incorretos.');
+    else 
+    {
+      if (checkLog == 0)
+      {
+        setToastMessage('Usuário ou Senha Incorreta. Por favor, tente novamente.');
         setToastSeverity('error');
       }
-    } else {
-      setToastMessage('Usuário não encontrado. Por favor, crie uma conta.');
-      setToastSeverity('error');
+      else
+      {
+        setToastMessage('Usuário não encontrado. Por favor, crie uma conta.');
+        setToastSeverity('error');
+      }
     }
-    setToastOpen(true);*/
+    setToastOpen(true);
   };
 
   const handleToastClose = () => {
