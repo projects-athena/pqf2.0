@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { loginValidationSchema } from '../../utils/validationSchema';
 import { ILoginFormInput } from '@/app/types/types';
+import { useAuth } from '@/app/context/AuthContext';
 
 export const useFormLogin = () => {
 
@@ -11,26 +12,34 @@ export const useFormLogin = () => {
   const [toastMessage, setToastMessage] = useState('');
   const [toastSeverity, setToastSeverity] = useState<'success' | 'error'>('success');
 
+  const { login } = useAuth();
+
   const router = useRouter();
   const { register, handleSubmit, formState: { errors } } = useForm<ILoginFormInput>({
     resolver: yupResolver(loginValidationSchema),
   });
 
   const onSubmit: SubmitHandler<ILoginFormInput> = data => {
-    const storedUserData = localStorage.getItem('userData');
-    if (storedUserData) {
-      const user = JSON.parse(storedUserData);
-      if (user.email === data.email && user.senha === data.senha) {
-        setToastMessage(`Seja Bem Vindo de volta, ${user.nome}!`);
-        setToastSeverity('success');
-        router.push('/homeUser');
-      } else {
-        setToastMessage('Email ou Senha Incorretos.');
+
+    let checkLog = login(data.email, data.senha)
+    if (checkLog == 1)
+    {
+      setToastMessage(`Seja Bem Vindo de volta!`);
+      setToastSeverity('success');
+      router.push('/');
+    }
+    else 
+    {
+      if (checkLog == 0)
+      {
+        setToastMessage('Usuário ou Senha Incorreta. Por favor, tente novamente.');
         setToastSeverity('error');
       }
-    } else {
-      setToastMessage('Usuário não encontrado. Por favor, crie uma conta.');
-      setToastSeverity('error');
+      else
+      {
+        setToastMessage('Usuário não encontrado. Por favor, crie uma conta.');
+        setToastSeverity('error');
+      }
     }
     setToastOpen(true);
   };

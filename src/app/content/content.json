@@ -1,5 +1,5 @@
 {
-    "pageTitle": "",
+    "pageTitle": "HomePage Pra Quem Paz",
     "header": {
         "title": ""
     },
@@ -10,10 +10,10 @@
     "cursoRecomendado": {
       "indicacaoTitle": "Recomendamos a você!",
       "cursoIndicado": {
-        "image": "/images/bg/formacao-social-media.jpg",
-        "nomeCurso": "Empreendedorismo",
-        "nomeInstrutor": "Professor André Esteves",
-        "descricaoCurso": "lorem ipsum blablabllalablablablal"
+        "image": "/images/bg/img.escritaacademica.jpg",
+        "nomeCurso": "Escrita Acadêmica",
+        "nomeInstrutor": "Professor Helder Ramon",
+        "descricaoCurso": "Aprenda a escrever textos acadêmicos de excelência! Domine a estrutura de artigos científicos e melhore sua comunicação acadêmica. Destaque-se na sua carreira!"
       }
     },
     "novosCursos": {
@@ -60,10 +60,10 @@
             "image": "/images/bg/Analise-de-mercado.png"
           }
         ]
-      },
-    "cursosDestaque": {
-        "cursosDestaqueTitle": "Lancamentos da Semana",
-        "courses": [
+    },
+    "cursosLancamentos": {
+        "cursosLancamentosTitle": "Lancamentos da Semana",
+        "cursosLancamentos": [
           {
             "title": "Empreendedorismo",
             "subtitle": "Negócios",
@@ -90,25 +90,67 @@
             "image": "/images/bg/Analise-de-mercado.png"
           }
         ]
-      },
-      "cursosMaisComprados": {
-        "maintitle": "Cursos Mais Comprados",
-        "courses": [
+    },
+    "cursosMaisComprados": {
+        "cursosMaisCompradosTitle": "Cursos Mais Comprados",
+        "cursosMaisComprados": [
           {
-            "image":"/images/bg/formacao-social-media.jpg"
+            "title": "Programação Com Python",
+            "subtitle": "Tecnologia da Informação",
+            "image": "/images/bg/Programacao-com-Python.png"
           },
           {
-            "image":"/images/bg/formacao-social-media.jpg"
-          },{
-            "image":"/images/bg/formacao-social-media.jpg"
+            "title": "Captação e Retenção de Talentos",
+            "subtitle": "Networking e Desenvolvimento Social",
+            "image": "/images/bg/Captacao-e-retencao-de-talentos.png"
           },
           {
-            "image":"/images/bg/formacao-social-media.jpg"
+            "title": "Massoterapia: Estética e Relaxante",
+            "subtitle": "Saúde e Bem Estar",
+            "image": "/images/bg/Massoterapia-estetica-e-relaxante.png"
           },
           {
-            "image":"/images/bg/formacao-social-media.jpg"
+            "title": "Gerenciamento de Marketing Digital",
+            "subtitle": "Marketing Digital",
+            "image": "/images/bg/gerente-mkt-digital.jpg"
+          },
+          {
+            "title": "Análise de Mercado",
+            "subtitle": "Análise de Mercado",
+            "image": "/images/bg/Analise-de-mercado.png"
           }
-
         ]
-      }
+    },
+    "cursosRecomendados": {
+        "cursosRecomendadosTitle": "Recomendamos a você!",
+        "cursosRecomendados": [
+          {
+            "id": "curso1",
+            "image": "/images/bg/formacao-social-media.jpg",
+            "professor": "Diego Barros",
+            "professorImage": "/images/teachers/dprofessor-diego-barros.png",
+            "curso": "Fundamentos de Python",
+            "duracao": "2 Horas",
+            "avaliacao": 5
+          },
+          {
+            "id": "curso2",
+            "image": "/images/bg/formacao-social-media.jpg",
+            "professor": "Diego Barros",
+            "professorImage": "/images/teachers/dprofessor-diego-barros.png",
+            "curso": "Fundamentos de Python",
+            "duracao": "2 Horas",
+            "avaliacao": 5
+          },
+          {
+            "id": "curso3",
+            "image": "/images/bg/formacao-social-media.jpg",
+            "professor": "Diego Barros",
+            "professorImage": "/images/teachers/dprofessor-diego-barros.png",
+            "curso": "Fundamentos de Python",
+            "duracao": "2 Horas",
+            "avaliacao": 5
+          }
+        ]
+    }
 }

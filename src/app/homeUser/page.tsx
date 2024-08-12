@@ -6,9 +6,9 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import CarroselHome from '../components/CarroselHome/carroselHome';
 import CursoDestaqueHomeUser from '../components/CursoDestaqueHomeUser/cursoDestaqueHomeUser';
-import content from '../content/userHome.content.json';
+import content from '../content/content.json';
 
-const { maintitle, cursos } = content.cursosDestaqueHomeUser;
+const { maintitle, courses } = content.cursosRecomendados;
 
 const HomeUser: React.FC = () => {
   return (
@@ -29,7 +29,7 @@ const HomeUser: React.FC = () => {
           </Typography>
 
           <Box sx={{ marginBottom: 4 }}>
-            <CarroselHome autoplay={true} slides={cursos.map((curso, index) => (
+            <CarroselHome autoplay={true} slides={courses.map((curso, index) => (
               <CursoDestaqueHomeUser 
                 key={index}
                 id={curso.id}

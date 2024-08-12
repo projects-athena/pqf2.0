@@ -1,7 +1,7 @@
-// app/page.tsx
 'use client'
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { Button, Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
@@ -9,14 +9,15 @@ import CursoDestaque from './components/CursoDestaque/cursoDestaque';
 import CursoIndicacao from './components/CursoIndicacao/cursoIndicacao';
 import CarroselHome from './components/CarroselHome/carroselHome';
 import content from './content/content.json';
-import { EmblaOptionsType } from 'embla-carousel';
 
 
-const { cursosDestaqueTitle, courses } = content.cursosDestaque;
-const { indicacaoTitle, cursoIndicado } = content.cursoRecomendado;
+const { cursosMaisCompradosTitle, cursosMaisComprados } = content.cursosMaisComprados;
+const { cursosLancamentosTitle, cursosLancamentos } = content.cursosLancamentos;
+const { indicacaoTitle, cursoIndicado} = content.cursoRecomendado;
 const { categoriasTitle, categorias } = content.categoriasCurso;
 
 export default function Home() {
+  const router = useRouter();
   return (
     <Container maxWidth="lg">
       
@@ -57,15 +58,15 @@ export default function Home() {
         </Typography>
       </Box>
 
-      <Button sx={{justifyContent: 'center', marginBottom: 3, width: '100%', color: 'secondary.contrastText', borderRadius: 5}} variant='contained' color='tertiary'>Matricule-se Já!</Button>
+      <Button onClick={() => { router.push('/Cadastro'); }} sx={{justifyContent: 'center', marginBottom: 3, width: '100%', color: 'secondary.contrastText', borderRadius: 5}} variant='contained' color='tertiary'>Matricule-se Já!</Button>
       
       <Box sx={{ marginBottom: 4 }}>
-        <CarroselHome autoplay={true} slides={courses.map((course, index) => (
+        <CarroselHome autoplay={true} slides={cursosMaisComprados.map((cursoMaisComprado, index) => (
           <CursoDestaque 
             key={index}
-            image={course.image}
-            title={course.title} 
-            subtitle={course.subtitle} />
+            image={cursoMaisComprado.image}
+            title={cursoMaisComprado.title} 
+            subtitle={cursoMaisComprado.subtitle} />
         ))} />
       </Box>
       
@@ -106,17 +107,17 @@ export default function Home() {
           marginBottom: 1,      
           }}
         >
-          {cursosDestaqueTitle}
+          {cursosMaisCompradosTitle}
         </Typography>
         <Grid 
           container 
           spacing={2}
           sx={{justifyContent: 'center'}}
         >
-          {courses.map((course) => (
+          {cursosMaisComprados.map((cursoMaisComprado) => (
             <Grid 
               item 
-              key={course.title} 
+              key={cursoMaisComprado.title} 
               xs={6}
               md={3}
               sx={{ 
@@ -124,7 +125,7 @@ export default function Home() {
                 justifyContent: 'center', 
               }}
             >
-              <CursoDestaque image={course.image} title={course.title} subtitle={course.subtitle} />
+              <CursoDestaque image={cursoMaisComprado.image} title={cursoMaisComprado.title} subtitle={cursoMaisComprado.subtitle} />
             </Grid>
           ))}
         </Grid>
@@ -192,17 +193,17 @@ export default function Home() {
           marginBottom: 1,      
           }}
         >
-          {cursosDestaqueTitle}
+          {cursosLancamentosTitle}
         </Typography>
         <Grid 
           container 
           spacing={2}
           sx={{justifyContent: 'center'}}
         >
-          {courses.map((course) => (
+          {cursosLancamentos.map((cursoLancamento) => (
             <Grid 
               item 
-              key={course.title} 
+              key={cursoLancamento.title} 
               xs={6}
               md={3}
               sx={{ 
@@ -210,7 +211,7 @@ export default function Home() {
                 justifyContent: 'center', 
               }}
             >
-              <CursoDestaque image={course.image} title={course.title} subtitle={course.subtitle} />
+              <CursoDestaque image={cursoLancamento.image} title={cursoLancamento.title} subtitle={cursoLancamento.subtitle} />
             </Grid>
           ))}
         </Grid>
