@@ -1,8 +1,11 @@
+'use client'
 import React from 'react';
-import { Box, Card, CardMedia } from '@mui/material';
+import { Box, Card, CardActionArea, CardMedia } from '@mui/material';
 import { Course } from '@/app/types/types';
+import { useRouter } from 'next/navigation';
 
 const CardCursosMaisComprados: React.FC<Course> = ({ title, image }) => {
+    const router = useRouter();
     return (
         <Box display="grid" justifyContent="center" alignItems="center">
             <Card
@@ -14,6 +17,7 @@ const CardCursosMaisComprados: React.FC<Course> = ({ title, image }) => {
                     backgroundColor: '#161616'
                 }}
             >
+                <CardActionArea onClick={() => { router.push('/player'); }}>
                 <CardMedia
                     sx={{
                         height: { xs: '150px', sm: '170px' },
@@ -25,6 +29,7 @@ const CardCursosMaisComprados: React.FC<Course> = ({ title, image }) => {
                     image={image}
                     title={title}
                 />
+                </CardActionArea>
             </Card>
         </Box>
     );

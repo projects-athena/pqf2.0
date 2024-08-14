@@ -1,12 +1,15 @@
+'use client'
 import React from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import content from '../content/content.json';
 import Carousel from '../components/NovosCursosComponents/carousel';
 import CardNovoCurso from '../components/NovosCursosComponents/cardsNovosCursosDisponiveis';
 import CardCursosMaisComprados from '../components/NovosCursosComponents/cardsCursosMaisComprados';
+import { useRouter } from 'next/navigation';
 
 export default function NovosCursos() {
   const { novosCursos, cursosMaisComprados } = content;
+  const router = useRouter();
 
   return (
     <div>
@@ -31,7 +34,7 @@ export default function NovosCursos() {
         <Grid container spacing={2} sx={{marginLeft: '5px'}}>
           <Grid xs={8}>
             <Typography sx={{ marginTop: '30px' }} variant='h5' color='white'>
-              <strong>{content.cursosMaisComprados.cursosMaisComprados.title}</strong>
+              <strong>Cursos Mais Comprados</strong>
             </Typography>
           </Grid>
           <Grid xs={4}>

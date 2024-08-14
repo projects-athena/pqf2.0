@@ -33,7 +33,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
-    if (storedUser) {
+    const logoutIndicator = localStorage.getItem('logout');
+
+    if (storedUser && !logoutIndicator) {
       setUser(JSON.parse(storedUser));
       setIsAuthenticated(true);
     }
@@ -43,8 +45,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     if (user) {
       localStorage.setItem('user', JSON.stringify(user));
       setIsAuthenticated(true);
+      localStorage.removeItem('logout');  // Remove o indicador de logout ao logar
     } else {
-      localStorage.removeItem('user');
       setIsAuthenticated(false);
     }
   }, [user]);
@@ -71,8 +73,8 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   const logout = () => {
-    localStorage.removeItem('user');
-    setUser(null);
+    setIsAuthenticated(false);
+    localStorage.setItem('logout', 'true'); // Adiciona um indicador de logout
   };
 
   return (

@@ -10,7 +10,7 @@ const VideoPage: React.FC = () => {
     <Container>
       <Grid container spacing={2} sx={{ height: '100vh' }}>
         <Grid item xs={12} md={6}>
-          <Box sx={{ width: '100%', marginBottom: 5, position: 'fixed', top: 0, left: 0  }}>
+          <Box sx={{ width: '90%', marginBottom: 5, position: 'fixed', top: 0, left: 0  }}>
             <VideoPlayer />
           </Box>
         </Grid>
