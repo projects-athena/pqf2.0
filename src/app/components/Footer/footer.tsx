@@ -39,18 +39,6 @@ const Footer = () => {
           <Grid item xs={2.4}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <Button onClick={() => { router.push('/'); }} color="primary" fullWidth>
-                  <ExploreIcon sx={{ color: 'white' }} />
-                </Button>
-              </Grid>
-              <Grid item>
-                <Typography variant="caption" align="center">Explorar</Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid item xs={2.4}>
-            <Grid container direction="column" alignItems="center">
-              <Grid item>
                 <Button href={"/NovosCursos"} color="primary" fullWidth>
                   <ImportContactsIcon sx={{ color: 'white' }} />
                 </Button>
@@ -63,7 +51,7 @@ const Footer = () => {
           <Grid item xs={2.4}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <Button onClick={() => { router.push('/'); }} color="primary" fullWidth>
+                <Button onClick={() => { router.push('/Construcao'); }} color="primary" fullWidth>
                   <HeadphonesIcon sx={{ color: 'white' }} />
                 </Button>
               </Grid>
@@ -75,7 +63,7 @@ const Footer = () => {
           <Grid item xs={2.4}>
             <Grid container direction="column" alignItems="center">
               <Grid item>
-                <Button onClick={() => { router.push('/'); }} color="primary" fullWidth>
+                <Button onClick={() => { router.push('/Construcao'); }} color="primary" fullWidth>
                   <SearchIcon sx={{ color: 'white' }} />
                 </Button>
               </Grid>

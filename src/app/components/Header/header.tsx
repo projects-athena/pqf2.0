@@ -4,15 +4,22 @@ import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import Link from '@mui/material/Link';
 import Image from "next/image";
 import { useLayout } from '../../context/LayoutContext';
+import { useAuth } from '@/app/context/AuthContext';
 
 const Header = () => {
   
   const router = useRouter();
   const { showHeader } = useLayout();
+  const { isAuthenticated, logout } = useAuth();
 
   if (!showHeader) {
     return null;
   }
+
+  const handleLogout = () => {
+    logout(); // Executa a função de logout
+    router.push('/'); // Redireciona o usuário para a homepage após logout
+  };
 
   return (
     <AppBar position="static">
@@ -38,7 +45,15 @@ const Header = () => {
             </Link>
           </Typography>
         </Box>
-        <Button onClick={() => { router.push('/Login'); }} variant='contained' color='tertiary'>Entre</Button>
+        {isAuthenticated ? (
+          <Button onClick={handleLogout} variant='contained' color='tertiary'>
+            Sair
+          </Button>
+        ) : (
+          <Button onClick={() => { router.push('/Login'); }} variant='contained' color='tertiary'>
+            Entre
+          </Button>
+        )}
       </Toolbar>
     </AppBar>
   );
