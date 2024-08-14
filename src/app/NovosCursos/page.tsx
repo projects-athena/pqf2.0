@@ -31,7 +31,7 @@ export default function NovosCursos() {
         <Grid container spacing={2} sx={{marginLeft: '5px'}}>
           <Grid xs={8}>
             <Typography sx={{ marginTop: '30px' }} variant='h5' color='white'>
-              <strong>{content.cursosMaisComprados.maintitle}</strong>
+              <strong>{content.cursosMaisComprados.cursosMaisComprados.title}</strong>
             </Typography>
           </Grid>
           <Grid xs={4}>
@@ -42,7 +42,7 @@ export default function NovosCursos() {
         </Grid>
         <Box sx={{ marginBottom: '100px' }}>
           <Carousel itemsPerPage={2} direction="row">
-            {cursosMaisComprados.courses.map((courses, index) => (
+            {cursosMaisComprados.cursosMaisComprados.map((courses, index) => (
               <CardCursosMaisComprados
                 key={index}
                 image={courses.image}
