@@ -23,7 +23,7 @@ const CursoDestaque: React.FC<CursoDestaqueProps> = ({ image, title, subtitle })
         color: 'secondary.contrastText',
       }}
     >
-      <CardActionArea onClick={() => { router.push('/player'); }}>
+      <CardActionArea onClick={() => { router.push('/Login'); }}>
       <CardMedia
         component="img"
         height="140"

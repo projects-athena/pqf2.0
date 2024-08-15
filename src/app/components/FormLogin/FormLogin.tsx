@@ -74,7 +74,7 @@ const FormLogin: React.FC = () => {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link sx={{ color: "white" }} href="#" variant="body2">
+              <Link sx={{ color: "white" }} href="/Construcao" variant="body2">
                 Esqueceu sua senha?
               </Link>
             </Grid>
