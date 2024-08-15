@@ -10,9 +10,13 @@ import CursoIndicacao from './components/CursoIndicacao/cursoIndicacao';
 import CarroselHome from './components/CarroselHome/carroselHome';
 import content from './content/content.json';
 import { useAuth } from './context/AuthContext';
+import CursoDestaqueHomeUser from './components/CursoDestaqueHomeUser/cursoDestaqueHomeUser';
+import CategoriaHomeUser from './components/CategoriaHomeUser/categoriaHomeUser';
 
+const {carrosselInicialTitle, carrosselInicialCursos } = content.carrosselInicial;
 const { cursosMaisCompradosTitle, cursosMaisComprados } = content.cursosMaisComprados;
 const { cursosLancamentosTitle, cursosLancamentos } = content.cursosLancamentos;
+const { cursosRecomendadosTitle, cursosRecomendados} = content.cursosRecomendados;
 const { indicacaoTitle, cursoIndicado } = content.cursoRecomendado;
 const { categoriasTitle, categorias } = content.categoriasCurso;
 
@@ -65,18 +69,58 @@ export default function Home() {
         <Button onClick={() => { router.push('/Cadastro'); }} sx={{ justifyContent: 'center', marginBottom: 3, width: '100%', color: 'secondary.contrastText', borderRadius: 5 }} variant='contained' color='tertiary'>Matricule-se Já!</Button>
       )}
 
-      <Box sx={{ marginBottom: 4 }}>
-        <CarroselHome autoplay={true} slides={cursosMaisComprados.map((cursoMaisComprado, index) => (
-          <CursoDestaque
-            key={index}
-            image={cursoMaisComprado.image}
-            title={cursoMaisComprado.title}
-            subtitle={cursoMaisComprado.subtitle} />
-        ))} />
+      {!isAuthenticated && (
+        <Box sx={{ marginBottom: 4 }}>
+          <CarroselHome autoplay={true} slides={carrosselInicialCursos.map((carrosselInicialCurso, index) => (
+            <CursoDestaque
+              key={index}
+              image={carrosselInicialCurso.image}
+              title={carrosselInicialCurso.title}
+              subtitle={carrosselInicialCurso.subtitle} />
+          ))} />
       </Box>
+      )}
 
-      {/* Exibe a seção "Recomendamos a você!" somente se o usuário estiver autenticado */}
       {isAuthenticated && (
+        <Box sx={{ marginBottom: 4 }}>
+          <CarroselHome autoplay={true} slides={cursosRecomendados.map((cursoRecomendado, index) => (
+              <CursoDestaqueHomeUser 
+                key={index}
+                id={cursoRecomendado.id}
+                image={cursoRecomendado.image}
+                professor={cursoRecomendado.professor}
+                professorImage={cursoRecomendado.professorImage}
+                curso={cursoRecomendado.curso}
+                duracao={cursoRecomendado.duracao}
+                avaliacao= {cursoRecomendado.avaliacao}/>
+            ))} />
+      </Box>
+      )}
+
+      {isAuthenticated && (
+        <Box sx={{ marginBottom: 10 }}>
+        <Typography
+          variant="h1"
+          sx={{
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: '1.5rem',
+            paddingBottom: '5px',
+            px: '5%',
+            marginBottom: 1,
+          }}
+        >
+          Navegue pelas Categorias!
+        </Typography>
+        <CarroselHome autoplay={false} slides={categorias.map((categoria, index) => (
+              <CategoriaHomeUser
+                key={index}
+                label={categoria}/>
+            ))} />
+        </Box>
+      )}
+
+      {!isAuthenticated && (
         <Box sx={{ marginBottom: 4 }}>
           <Typography
             variant="h1"
@@ -101,6 +145,7 @@ export default function Home() {
         </Box>
       )}
 
+      {!isAuthenticated && (
       <Box sx={{ marginBottom: 3 }}>
         <Typography
           variant="h1"
@@ -136,7 +181,9 @@ export default function Home() {
           ))}
         </Grid>
       </Box>
+      )}
 
+      {!isAuthenticated && (
       <Box sx={{ marginBottom: 4 }}>
         <Typography
           variant="h1"
@@ -187,7 +234,9 @@ export default function Home() {
           ))}
         </Grid>
       </Box>
+      )}
 
+      {!isAuthenticated && (
       <Box sx={{ marginBottom: 10 }}>
         <Typography
           variant="h1"
@@ -223,6 +272,7 @@ export default function Home() {
           ))}
         </Grid>
       </Box>
+      )}
 
     </Container>
   );
