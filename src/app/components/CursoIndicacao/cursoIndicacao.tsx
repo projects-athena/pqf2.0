@@ -7,6 +7,7 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Button } from '@mui/material';
+import { useRouter } from 'next/navigation';
 
 interface CursoIndicacaoProps {
   image: string;
@@ -17,6 +18,7 @@ interface CursoIndicacaoProps {
 
 const CursoIndicacao: React.FC<CursoIndicacaoProps> = ({ image, nomeCurso, nomeInstrutor, descricaoCurso }) => {
 
+  const router = useRouter();
   const [iconColor, setIconColor] = useState('secondary.contrastText');
 
   const handleClick = () => {
@@ -47,7 +49,7 @@ const CursoIndicacao: React.FC<CursoIndicacaoProps> = ({ image, nomeCurso, nomeI
             <Typography variant="body2"sx={{ mb: 2 }}>
             {descricaoCurso}
             </Typography>
-            <Button variant="contained" color="tertiary" fullWidth>
+            <Button onClick={() => { router.push('/Login'); }} variant="contained" color="tertiary" fullWidth>
             Saiba mais!
             </Button>
       </CardContent>

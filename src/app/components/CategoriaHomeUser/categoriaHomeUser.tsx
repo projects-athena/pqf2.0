@@ -1,16 +1,19 @@
 import React from 'react';
 import { Button, Typography } from '@mui/material';
 import CategoryIcon from '@mui/icons-material/Category';
+import { useRouter } from 'next/navigation';
 
 const CategoriaHomeUser: React.FC<{ label: string }> = ({ label }) => {
+  const router = useRouter();
   return (
     <Button 
+      onClick={() => { router.push('/Construcao'); }}
       variant="outlined" 
       sx={{
         backgroundColor: 'secondary.main',
         color: 'secondary.contrastText',
-        width: 80, 
-        height: 80, 
+        width: "100%", 
+        height: "100%",  
         display: 'flex', 
         flexDirection: 'column', 
         justifyContent: 'center', 
