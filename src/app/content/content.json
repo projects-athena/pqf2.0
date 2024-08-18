@@ -190,5 +190,14 @@
             "image": "/images/bg/Analise-de-mercado.png"
           }
         ]
+    },
+    "ultimoCursoUser": {
+      "ultimoCursoUserTitle": "Conclua seu ultimo curso aberto!",
+      "ultimoCursoUser": {
+        "id": "curso1",
+        "image": "/images/bg/Programacao-com-Python-600x450.png",
+        "curso": "Fundamentos de algoritmos em Python",
+        "progresso": 82
+      }
     }
 }

@@ -20,6 +20,7 @@ const { cursosLancamentosTitle, cursosLancamentos } = content.cursosLancamentos;
 const { cursosRecomendadosTitle, cursosRecomendados} = content.cursosRecomendados;
 const { indicacaoTitle, cursoIndicado } = content.cursoRecomendado;
 const { categoriasTitle, categorias } = content.categoriasCurso;
+const { ultimoCursoUserTitle, ultimoCursoUser } = content.ultimoCursoUser;
 
 export default function Home() {
   const router = useRouter();
@@ -292,9 +293,14 @@ export default function Home() {
                 marginBottom: 1,
               }}
             >
-              Conclua seu ultimo curso aberto!
+              {ultimoCursoUserTitle}
             </Typography>
-            <UltCursoUser id='1' image="/images/bg/Colorimetria-e-texturizacao-capilar-600x450.png" curso='colorimetria' progresso={75}></UltCursoUser>
+            <UltCursoUser
+              id={ultimoCursoUser.id}
+              image={ultimoCursoUser.image}
+              curso={ultimoCursoUser.curso}
+              progresso={ultimoCursoUser.progresso}
+            ></UltCursoUser>
           </Box>
           <Button onClick={() => { router.push('/Construcao'); }} sx={{ justifyContent: 'center', marginBottom: 10, width: '100%', color: 'secondary.contrastText', borderRadius: 5 }} variant='contained' color='tertiary'>Veja todos seus cursos!</Button>
         </Box>
