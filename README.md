@@ -7,11 +7,12 @@ Pra Quem Faz (PQF) é uma plataforma de cursos livres oferecida pela UNISUAM. An
 Essa migração para uma arquitetura moderna com Next.js no frontend e tecnologias escaláveis no backend traz melhorias significativas em termos de experiência do usuário, fortalecimento da marca, segurança, escalabilidade e redução de custos a longo prazo.
 
 
-### Fluxograma do Aplicativo
-![FLUXOGRAMA](https://exemplo.com/logo.png)
-
 ### Tela Inicial
-![PQF](https://exemplo.com/logo.png)
+![PQF](public/images/example1.png)
+
+
+### Fluxograma do Aplicativo
+![FLUXOGRAMA](public/images/example2.jpg)
 
 
 ## Tecnologias Utilizadas
