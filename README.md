@@ -8,7 +8,9 @@ Essa migração para uma arquitetura moderna com Next.js no frontend e tecnologi
 
 
 ### Tela Inicial
-![PQF](public/images/example1.png)
+<p align="center">
+  <img src="public/images/example1.png" alt="PQF" />
+</p>
 
 
 ### Fluxograma do Aplicativo
