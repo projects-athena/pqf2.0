@@ -1,4 +1,24 @@
-## Getting Started
+## Pra Quem Faz - Plataforma de Cursos Livres
+
+**Visão Geral**
+
+Pra Quem Faz (PQF) é uma plataforma de cursos livres oferecida pela UNISUAM. Anteriormente, o PQF funcionava como um agregador de links para o Hotmart, onde todo o processo de compra e consumo de conteúdo era feito externamente. Nosso projeto visa transformar o PQF em uma plataforma completa, onde toda a jornada do aluno ocorre dentro do próprio site, desde a compra até o acesso ao conteúdo dos cursos.
+
+Essa migração para uma arquitetura moderna com Next.js no frontend e tecnologias escaláveis no backend traz melhorias significativas em termos de experiência do usuário, fortalecimento da marca, segurança, escalabilidade e redução de custos a longo prazo.
+
+
+### Fluxograma do Aplicativo
+![FLUXOGRAMA](https://exemplo.com/logo.png)
+
+### Tela Inicial
+![PQF](https://exemplo.com/logo.png)
+
+
+## Tecnologias Utilizadas
+
+**Next.js**: Framework React para renderização no lado do servidor e otimização de SEO.
+
+## Iniciando o projeto
 
 Primeiro, instale as dependências:
 
@@ -19,7 +39,9 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Adicionando Código ao Projeto
+## Contribuindo com o Projeto!
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
 
 ### Git e Controle de Versão
 

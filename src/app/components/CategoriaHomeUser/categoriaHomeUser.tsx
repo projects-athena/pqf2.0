@@ -7,7 +7,7 @@ const CategoriaHomeUser: React.FC<{ label: string }> = ({ label }) => {
   const router = useRouter();
   return (
     <Button 
-      onClick={() => { router.push('/Construcao'); }}
+      onClick={() => { router.push('/NovosCursos'); }}
       variant="outlined" 
       sx={{
         backgroundColor: 'secondary.main',
